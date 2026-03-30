@@ -1,139 +1,87 @@
-# QA Test Plan
-## QualiCore Tech — Manual QA Portfolio E-Commerce Application
-**Document Version:** 1.0  
-**Date:** March 2026  
-**Prepared by:** QA Portfolio Project  
-**Status:** Approved
+# QualiCore Tech — QA Test Plan v1.0
 
----
-
-## 1. Scope
-
-This test plan covers manual functional testing of the QualiCore Tech e-commerce web application. The application is a client-side React SPA with no backend. Testing will focus on verifying that all core user-facing features behave correctly, identifying defects, and assessing overall application quality.
-
----
+## 1. Introduction
+This test plan defines the testing approach for QualiCore Tech, a demo e-commerce web application used for Manual QA training and portfolio development.
 
 ## 2. Objectives
+- Verify all core e-commerce functionality works as specified
+- Identify and document defects with professional bug reports
+- Validate UI/UX across desktop and mobile viewports
+- Ensure data consistency across product catalog
+- Practice structured QA methodology
 
-- Validate all functional requirements as defined in the SRS
-- Identify and document reproducible defects
-- Assess alignment between expected and actual application behaviour
-- Produce a test execution record and summary report suitable for portfolio presentation
-- Practice real-world QA documentation workflows
+## 3. Scope
 
----
+### 3.1 In Scope
+- Home page layout and hero section
+- Product catalog browsing, pagination
+- Product detail pages (specs, images, pricing)
+- Search functionality (name, brand, category)
+- Filter functionality (category, brand, price, availability)
+- Sort functionality (price, name, rating)
+- Shopping cart (add, remove, update, persist)
+- Wishlist (add, remove, persist)
+- User authentication (login, register, logout)
+- Checkout form and validation
+- Order confirmation flow
+- Responsive design (mobile, tablet, desktop)
+- Static pages (About, Contact, Terms)
+- Navigation and routing
 
-## 3. In-Scope Features
-
-- Home page display and featured product sections
-- Product catalogue: listing, search, filtering, and sorting
-- Product detail pages: data display, gallery, specs, stock, cart and wishlist actions
-- Shopping cart: add, remove, update quantity, totals calculation, shipping, persistence
-- Wishlist: add, remove, view, badge count
-- User authentication: login, registration, session display, logout
-- Checkout: form input, field validation, order submission, confirmation
-- Navigation: header links, mobile menu, breadcrumbs, 404 handling
-- Responsive design: desktop, tablet, and mobile viewports
-
----
-
-## 4. Out of Scope
-
-- Backend or API testing (no backend exists)
-- Real payment processing
+### 3.2 Out of Scope
+- Backend/API testing (no backend exists)
 - Performance/load testing
-- Automated testing (Playwright/Vitest test execution)
-- Cross-browser compatibility beyond the primary test browser
-- Accessibility compliance auditing
+- Security/penetration testing
+- Accessibility compliance auditing (WCAG)
+- Cross-browser testing beyond Chrome/Firefox/Edge
+- Payment processing (demo only)
 
----
+## 4. Test Types
+| Type | Description |
+|------|-------------|
+| Smoke Testing | Verify app launches and core navigation works |
+| Functional Testing | Verify each feature against requirements |
+| Exploratory Testing | Unscripted investigation to discover unexpected defects |
+| Regression Testing | Re-test after fixes to ensure no new issues |
+| UI/UX Testing | Verify layout, styling, responsiveness |
+| Boundary/Edge Testing | Test limits (empty cart, max quantity, long strings) |
 
-## 5. Test Types
+## 5. Test Environment
+| Component | Detail |
+|-----------|--------|
+| Application | QualiCore Tech (React + Vite) |
+| Browser | Chrome 120+, Firefox 120+, Edge 120+ |
+| OS | Windows 11, macOS Sonoma |
+| Viewport | Desktop (1920×1080), Tablet (768×1024), Mobile (375×812) |
+| Data | Static JSON, localStorage persistence |
 
-| Test Type | Description |
-|-----------|-------------|
-| Functional Testing | Verify each feature works as per requirements |
-| Exploratory Testing | Unscripted investigation to discover unexpected issues |
-| Regression Testing | Confirm that known bugs do not spread to other areas |
-| Negative Testing | Test invalid inputs and boundary edge cases |
-| UI/Layout Testing | Verify visual presentation and responsive behaviour |
+## 6. Entry Criteria
+- Application builds and runs without fatal errors
+- All pages are accessible via navigation
+- Product data loads correctly
+- Test environment is set up
 
----
+## 7. Exit Criteria
+- All planned test cases executed
+- All critical/high bugs documented
+- Test summary report completed
+- No blocking defects remain for core flows
 
-## 6. Test Environment
+## 8. Defect Management
+- Defects logged with: ID, title, severity, priority, steps to reproduce, expected/actual results
+- Severity levels: Critical, High, Medium, Low
+- Priority levels: P1 (Urgent), P2 (High), P3 (Medium), P4 (Low)
 
-| Parameter | Value |
-|-----------|-------|
-| Application | QualiCore Tech v1.0 |
-| Deployment | Local dev server via `npm run dev` |
-| Runtime | Node.js 18+ / Vite |
-| Primary Browser | Google Chrome (latest stable) |
-| Secondary Browser | Mozilla Firefox (latest stable) |
-| Desktop Resolution | 1440 x 900 |
-| Mobile Viewport | 375 x 812 (iPhone SE simulation via DevTools) |
-| Operating System | Windows 10 / macOS Sonoma |
-| Demo Credentials | demo@qualicoretech.com / Demo1234 |
+## 9. Risks
+| Risk | Mitigation |
+|------|-----------|
+| localStorage data loss | Document as known limitation |
+| No backend validation | Test client-side validation thoroughly |
+| Intentional defects mixed with real bugs | Use defect map for reference |
+| Static data may not cover all edge cases | Design test data to supplement |
 
----
-
-## 7. Entry Criteria
-
-- Application successfully builds and runs locally (`npm run dev` without errors)
-- All pages are accessible via their defined routes
-- Product data loads correctly from the local JSON file
-- Test cases and test scenarios have been reviewed and approved
-
----
-
-## 8. Exit Criteria
-
-- All planned test cases have been executed (pass or fail)
-- All identified defects have been logged in the bug report document
-- A test summary report has been produced
-- No Critical (P1) severity defects are outstanding that would block QA sign-off
-
----
-
-## 9. Defect Management
-
-| Severity | Definition | Examples |
-|----------|------------|---------|
-| Critical | Core functionality broken; prevents primary user flow | Cannot add to cart; checkout crashes |
-| High | Significant functional defect; workaround possible | Incorrect totals; filter returns wrong results |
-| Medium | Partial feature failure; minor impact on experience | Wrong spec shown; image broken on specific product |
-| Low | Minor UI or cosmetic issue; no functional impact | Typo in page title; misaligned element |
-
-All defects will be documented in the Bug Reports document with full reproduction steps, environment details, severity, priority, and status.
-
----
-
-## 10. Risks
-
-| Risk | Likelihood | Impact | Mitigation |
-|------|-----------|--------|------------|
-| Intentional bugs may overlap with genuine bugs | Medium | Medium | Cross-reference with known defect list |
-| localStorage may not persist across browsers | Low | Low | Test in a single primary browser per session |
-| Demo credentials may be case-sensitive | Low | Low | Use exact credentials as documented |
-| Mobile simulation may differ from real device | Medium | Low | Note when testing on DevTools simulation |
-
----
-
-## 11. Assumptions
-
-- All intentional defects are deliberate and represent realistic, reportable QA findings
-- The application is tested in an isolated browser session to avoid stale localStorage data
-- Test data (product SKUs, prices, names) reflects the seeded JSON data and is not expected to change
-- Screenshots and screen recordings serve as evidence where referenced in the execution log
-
----
-
-## 12. Test Schedule (Indicative)
-
-| Phase | Activity | Estimated Effort |
-|-------|----------|-----------------|
-| 1 | Review SRS, user stories, and acceptance criteria | 2 hours |
-| 2 | Execute planned test cases | 6 hours |
-| 3 | Exploratory testing session | 2 hours |
-| 4 | Document defects and update execution log | 2 hours |
-| 5 | Write test summary report | 1 hour |
-| **Total** | | **~13 hours** |
+## 10. Assumptions
+- Tester has access to Chrome DevTools
+- App is tested locally via `npm run dev`
+- No real payment or email functionality exists
+- Demo credentials are documented in README

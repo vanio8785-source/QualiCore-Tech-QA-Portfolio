@@ -2,7 +2,7 @@
 
 **Manual QA Portfolio E-Commerce Project**
 
-QualiCore Tech is a realistic demo e-commerce web application built for Manual QA practice, test case design, bug reporting, exploratory testing, and portfolio presentation. It simulates a UK-based technology retailer with a full product catalogue, shopping cart, wishlist, authentication, and checkout flow.
+QualiCore Tech is a realistic demo e-commerce web application created for Manual QA practice, test case design, bug reporting, exploratory testing, and portfolio presentation.
 
 ---
 
@@ -18,61 +18,75 @@ QualiCore Tech is a realistic demo e-commerce web application built for Manual Q
 
 ## Project Overview
 
-- 50+ products across 6 categories: Laptops, Desktop PCs, Monitors, Components, Accessories, Storage & Networking
-- Product detail pages with image gallery, specifications table, ratings, and stock status
-- Search by product name, brand, category, and description
-- Filtering by category, brand, price range, minimum rating, and in-stock availability
+- Full product catalog with 50+ items across 6 categories
+- Product detail pages with specs, images, and ratings
+- Search across product name, brand, and category
+- Filtering by category, brand, price range, and availability
 - Sorting by price, name, rating, and newest
-- Shopping cart with quantity management, subtotal, shipping calculation, and localStorage persistence
-- Wishlist with add/remove and session persistence
-- User authentication (login and registration) with demo credentials
-- Checkout flow with form validation and order confirmation
-- Responsive design for desktop, tablet, and mobile
-- Intentional reproducible defects embedded for QA practice
-
----
+- Cart with quantity management and order summary
+- Wishlist functionality
+- Checkout flow with form validation
+- Responsive design for desktop and mobile
+- Intentional reproducible defects for QA practice
 
 ## QA Scope
 
-This project supports: Manual QA training, exploratory testing, functional testing, regression testing, bug reporting, and portfolio presentation.
+This project is designed to support:
 
-Full QA documentation is available in the `qa-docs/` folder.
-
----
+- **Manual QA training** — practice real-world testing workflows
+- **Exploratory testing** — discover bugs through unscripted investigation
+- **Functional testing** — verify features work as expected
+- **Regression testing** — confirm fixes don't break other areas
+- **Bug reporting** — write clear, reproducible Jira-style defect reports
+- **Portfolio presentation** — showcase QA skills to recruiters and hiring managers
 
 ## Intentional Defects
 
-The application contains reproducible defects across:
+The application intentionally contains reproducible defects across:
 
-- Cart subtotal calculation, quantity stock cap
-- Sorting order for a specific product category
-- Search result inconsistency for a specific brand
-- Product detail: broken image, incorrect spec, page title typo
-- Authentication: missing password validation, weak password accepted
-- Checkout: postcode not validated, card number accepts too few digits
-- Wishlist: items beyond 8 lost on refresh
+- Product data inconsistencies
+- Search behavior issues
+- Filter and sort edge cases
+- Cart and wishlist state quirks
+- Form validation gaps
+- Responsive and UI defects
+- Pricing and discount display issues
 
----
+These defects are designed to be realistic, reportable, and suitable for severity/priority assessment practice.
 
 ## Tech Stack
 
-React 18 · Vite · React Router v6 · Tailwind CSS · localStorage (no backend)
-
----
+- **React 18** — UI framework
+- **Vite** — build tool and dev server
+- **React Router** — client-side routing
+- **Tailwind CSS** — utility-first styling
+- **CSS Modules** — component-scoped styles
+- **localStorage** — client-side persistence (no backend)
 
 ## Run Locally
 
 ```bash
+# Clone the repository
 git clone https://github.com/YOUR_USERNAME/qualicore-tech.git
 cd qualicore-tech
+
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
 ## Demo Credentials
 
-- **Email:** demo@qualicoretech.com
-- **Password:** Demo1234
+- Email: `demo@qualicoretech.com`
+- Password: `Demo1234`
 
 ---
 

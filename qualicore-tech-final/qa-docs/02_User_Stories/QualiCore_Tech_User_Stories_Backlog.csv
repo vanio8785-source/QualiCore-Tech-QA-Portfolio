@@ -1,51 +1,38 @@
-Story ID,Epic,Title,As a,I want to,So that,Priority,Status
-US-001,Product Browsing,View home page,guest user,view the home page,I can get an overview of the store and navigate to product areas,Medium,Done
-US-002,Product Browsing,Browse all products,guest user,browse all products in a catalogue,I can explore what the store offers,High,Done
-US-003,Product Browsing,View product detail page,guest user,view a product detail page,I can see full product information before adding to cart,High,Done
-US-004,Product Browsing,View product images and gallery,guest user,see product images and a gallery,I can evaluate the product visually,Medium,Done
-US-005,Product Browsing,View specifications table,guest user,see a product's specifications table,I can compare technical details,Medium,Done
-US-006,Product Browsing,View price and discount,guest user,see the product's price, discount, and old price,I understand the value I am getting,High,Done
-US-007,Product Browsing,View stock status,guest user,see the product's stock status,I know whether it is available to purchase,High,Done
-US-008,Product Browsing,View related products,guest user,see related products at the bottom of a product page,I can discover alternatives,Low,Done
-US-009,Search,Header search bar,guest user,search for products using the header search bar,I can quickly navigate to what I'm looking for,High,Done
-US-010,Search,Sidebar search,guest user,search for products using the sidebar search on the catalogue page,I can filter results inline,High,Done
-US-011,Search,Search by multiple fields,guest user,search by product name, brand, category, or description,I can find items using different terms,High,Done
-US-012,Search,Results count updates,guest user,see the search results count update,I know how many products matched,Medium,Done
-US-013,Filtering,Filter by category,guest user,filter products by category,I can narrow down results to a specific product type,High,Done
-US-014,Filtering,Filter by brand,guest user,filter products by brand,I can find products from a preferred manufacturer,Medium,Done
-US-015,Filtering,Filter by max price,guest user,filter products by a maximum price,I can shop within my budget,High,Done
-US-016,Filtering,Filter by minimum rating,guest user,filter products by minimum rating,I can find well-reviewed items,Medium,Done
-US-017,Filtering,Filter by in-stock only,guest user,filter by in-stock only,I do not see unavailable products,Medium,Done
-US-018,Filtering,Clear all filters,guest user,clear all active filters with a single click,I can reset the catalogue view quickly,Medium,Done
-US-019,Sorting,Sort price low to high,guest user,sort products by price low to high,I can find the most affordable options first,High,Done
-US-020,Sorting,Sort price high to low,guest user,sort products by price high to low,I can find premium products first,Medium,Done
-US-021,Sorting,Sort by name,guest user,sort products by name A-Z or Z-A,I can locate products alphabetically,Low,Done
-US-022,Sorting,Sort by best rated,guest user,sort products by best rated,I can find top-reviewed products easily,Medium,Done
-US-023,Sorting,Default sort newest,guest user,have the default sort order show newest products first,I see the latest additions,Medium,Done
-US-024,Cart,Add to cart from listing,guest user,add a product to my cart from the product listing,I can shop without entering each product page,High,Done
-US-025,Cart,Add to cart from PDP,guest user,add a product to my cart from the product detail page with a selected quantity,I can control how many units I add,High,Done
-US-026,Cart,View cart,guest user,view my cart and see all added items,I can review my order,High,Done
-US-027,Cart,Update quantity,guest user,increase or decrease item quantities in the cart,I can adjust my order,High,Done
-US-028,Cart,Remove item,guest user,remove an item from the cart,I can change my selection,High,Done
-US-029,Cart,View totals,guest user,see the subtotal, shipping cost, and total in the cart,I understand what I will pay,High,Done
-US-030,Cart,Free shipping notification,guest user,see a free shipping notification when my order qualifies,I understand the shipping benefit,Medium,Done
-US-031,Cart,Cart persistence,guest user,have my cart persist across page refreshes,I do not lose my selections,High,Done
-US-032,Wishlist,Add to wishlist,guest user,add a product to my wishlist,I can save it for later consideration,Medium,Done
-US-033,Wishlist,Remove from wishlist,guest user,remove a product from my wishlist,I can manage my saved items,Medium,Done
-US-034,Wishlist,View wishlist page,guest user,view all items in my wishlist on a dedicated page,I can review my saved products,Medium,Done
-US-035,Wishlist,Wishlist badge count,guest user,have the wishlist badge count in the header reflect my current wishlist size,I always know how many items I have saved,Low,Done
-US-036,Authentication,Login with valid credentials,guest user,log in using valid credentials,I can access my account,High,Done
-US-037,Authentication,Login error message,guest user,see an error message if I submit incorrect credentials,I understand why login failed,High,Done
-US-038,Authentication,Register new account,guest user,register a new account,I can become an authenticated user,High,Done
-US-039,Authentication,Name displayed after login,authenticated user,see my name displayed in the header,I know I am logged in,Medium,Done
-US-040,Authentication,Log out,authenticated user,log out,I can end my session,High,Done
-US-041,Checkout,Proceed to checkout,user with cart items,proceed to checkout,I can complete my purchase,High,Done
-US-042,Checkout,Enter delivery details,user,enter my delivery details during checkout,my order can be delivered,High,Done
-US-043,Checkout,Enter payment details,user,enter payment details during checkout,I can complete the purchase,High,Done
-US-044,Checkout,Field validation,user,have required fields validated during checkout,I cannot submit an incomplete order,High,Done
-US-045,Checkout,Order summary at checkout,user,see an order summary during checkout,I can confirm my items and total before placing the order,High,Done
-US-046,Checkout,Order confirmation,user,be redirected to an order confirmation page after placing an order,I receive confirmation,High,Done
-US-047,Navigation,Mobile menu,mobile user,open and close a mobile navigation menu,I can navigate the site from a small screen,High,Done
-US-048,Navigation,Responsive layout,mobile user,have the layout adapt to my screen size,the content is readable and usable,High,Done
-US-049,Navigation,Header navigation links,user,have the header navigation links take me to the correct pages,I can navigate efficiently,High,Done
-US-050,Navigation,Breadcrumb navigation,user,see breadcrumb navigation on the product detail page,I can understand my location and navigate back,Low,Done
+Story ID,Title,As a...,I want to...,So that...,Priority,Module
+US-001,Browse catalog,User,View all products on the catalog page,I can browse available items,High,Catalog
+US-002,View product details,User,Click on a product to see full details,I can make an informed purchase decision,High,Product Details
+US-003,See product info on card,User,See price/rating/availability on product cards,I can quickly compare products,High,Catalog
+US-004,See sale badges,User,See discount badges on sale products,I know which items are discounted,Medium,Catalog
+US-005,Search by name,User,Search products by name,I can find specific items quickly,High,Search
+US-006,Search across fields,User,Search across name/brand/category,I get comprehensive search results,High,Search
+US-007,Empty search state,User,See a message when search returns nothing,I know no results matched,Medium,Search
+US-008,Filter by category,User,Filter products by category,I can narrow the catalog,High,Filters
+US-009,Filter by brand,User,Filter products by brand,I can find preferred brands,Medium,Filters
+US-010,Filter by price,User,Filter by price range,I can find products in my budget,Medium,Filters
+US-011,Filter by availability,User,Filter by in-stock status,I only see available products,Medium,Filters
+US-012,Clear filters,User,Clear all filters,I can see the full catalog again,High,Filters
+US-013,Sort by price,User,Sort products by price,I can find cheapest/most expensive,High,Sorting
+US-014,Sort by name,User,Sort alphabetically,I can find products by name order,Medium,Sorting
+US-015,Sort by rating,User,Sort by rating,I can see highest-rated products first,Medium,Sorting
+US-016,Add to cart,User,Add a product to cart,I can purchase it later,High,Cart
+US-017,View cart,User,View cart with items and prices,I can review before checkout,High,Cart
+US-018,Change cart quantity,User,Change item quantity in cart,I can adjust my order,High,Cart
+US-019,Remove from cart,User,Remove items from cart,I can discard unwanted items,High,Cart
+US-020,Cart persistence,User,Have cart persist on refresh,I don't lose my selections,High,Cart
+US-021,Cart badge,User,See item count badge in header,I know how many items are in cart,Medium,Cart
+US-022,Add to wishlist,User,Add products to wishlist,I can save items for later,Medium,Wishlist
+US-023,View wishlist,User,View my wishlist page,I can see all saved items,Medium,Wishlist
+US-024,Remove from wishlist,User,Remove items from wishlist,I can manage saved items,Medium,Wishlist
+US-025,Wishlist persistence,User,Have wishlist persist on refresh,I don't lose saved items,Medium,Wishlist
+US-026,Login,User,Log in with credentials,I can access my account,High,Auth
+US-027,Register,User,Register a new account,I can create an account,Medium,Auth
+US-028,Logout,User,Log out of my account,I can end my session,Medium,Auth
+US-029,Go to checkout,User,Proceed to checkout from cart,I can complete my purchase,High,Checkout
+US-030,Fill checkout form,User,Enter delivery and payment details,I can place my order,High,Checkout
+US-031,Field validation,User,Have required fields validated,I don't submit incomplete orders,High,Checkout
+US-032,Order summary,User,See order summary during checkout,I can verify my order,High,Checkout
+US-033,Order confirmation,User,See confirmation after placing order,I know my order was placed,High,Checkout
+US-034,Free shipping,User,Get free shipping over £50,I save on shipping costs,Medium,Checkout
+US-035,Mobile responsive,User,Use the site on mobile,I can shop on any device,High,UI/UX
+US-036,Header navigation,User,Navigate via header menu,I can access all sections,High,Navigation
+US-037,Footer links,User,Access static pages from footer,I can find company information,Low,Navigation

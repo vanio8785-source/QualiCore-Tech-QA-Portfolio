@@ -1,211 +1,112 @@
-# Software Requirements Specification (SRS)
-## QualiCore Tech — Manual QA Portfolio E-Commerce Application
-**Document Version:** 1.0  
-**Date:** March 2026  
-**Status:** Approved for QA
+# QualiCore Tech — Software Requirements Specification (SRS) v1.0
 
----
+## 1. Introduction
 
-## 1. Project Overview
+### 1.1 Purpose
+This document defines the functional and non-functional requirements for QualiCore Tech, a demo e-commerce web application built for Manual QA training and portfolio practice.
 
-QualiCore Tech is a demo e-commerce web application specialising in technology products including laptops, desktop PCs, monitors, components, storage, and accessories. The application is designed as a realistic single-page application (SPA) to provide a comprehensive environment for manual QA practice, test case design, bug reporting, exploratory testing, and portfolio presentation.
+### 1.2 Scope
+QualiCore Tech simulates a realistic online electronics retail store. It allows users to browse products, search, filter, sort, manage a cart and wishlist, register/login, and complete a checkout flow. The application is frontend-only with localStorage persistence.
 
-The application simulates a real-world UK-based tech retailer, complete with a product catalogue, search and filtering, shopping cart, wishlist, user authentication, and checkout flow. Prices are displayed in GBP (£).
+### 1.3 Goals
+- Provide a realistic e-commerce user experience
+- Support Manual QA practice including test case design, exploratory testing, and bug reporting
+- Serve as a portfolio-ready project for junior QA professionals
 
----
-
-## 2. Scope
-
-### 2.1 In Scope
-
-- Frontend web application (React SPA)
-- Product browsing, search, filtering, and sorting
-- Product detail pages with specifications
-- Shopping cart with quantity management
-- Wishlist functionality
-- User authentication (login and registration)
-- Checkout flow with form validation
-- Responsive design for desktop and mobile
-- Client-side data persistence via localStorage
-- Static informational pages (About, Contact, Terms)
-
-### 2.2 Out of Scope
-
-- Backend API or database integration
-- Real payment processing
-- Email notifications
-- Admin/vendor portal
-- Real user account management
-- Order history retrieval
-- Third-party authentication (OAuth)
-
----
-
-## 3. Goals
-
-- Provide a realistic, visually professional e-commerce application for QA practice
-- Include a sufficient range of features to support functional, exploratory, and regression testing
-- Embed reproducible intentional defects across multiple functional areas
-- Support test case design, bug reporting, and traceability practice
-- Be deployable as a live portfolio project
-
----
-
-## 4. User Roles
+## 2. User Roles
 
 | Role | Description |
 |------|-------------|
-| Guest User | Can browse products, search, filter, view product details, and add items to cart and wishlist. Cannot access checkout without navigating directly. |
-| Authenticated User | Can log in with demo credentials, access a personalised greeting, proceed through checkout, and log out. |
-| Demo Account | Pre-seeded credential set: demo@qualicoretech.com / Demo1234 |
+| Guest | Can browse, search, filter, sort, view products, add to cart/wishlist |
+| Registered User | Can log in with demo credentials, same capabilities as Guest |
+| QA Tester | Uses the app to practice testing workflows (not an in-app role) |
 
----
+## 3. Functional Requirements
 
-## 5. Functional Requirements
+### 3.1 Product Catalog (FR-001 to FR-005)
+- **FR-001**: Display all products on the catalog page with image, name, price, and rating
+- **FR-002**: Each product links to a detail page with full specifications
+- **FR-003**: Products belong to categories: Laptops, Desktops, Components, Peripherals, Networking, Storage, Audio
+- **FR-004**: Products display discount/sale pricing where applicable
+- **FR-005**: Out-of-stock products are visually indicated
 
-### FR-01 — Home Page
-- The home page shall display a hero section with a call-to-action linking to the product catalogue.
-- The home page shall display featured product sections (e.g., new arrivals, best sellers).
-- Products displayed on the home page shall link to their respective product detail pages.
+### 3.2 Search (FR-006 to FR-009)
+- **FR-006**: Search bar available in the header on all pages
+- **FR-007**: Search matches product name, brand, and category (case-insensitive)
+- **FR-008**: Partial matches are supported
+- **FR-009**: Empty search results display a helpful empty state
 
-### FR-02 — Product Catalogue
-- The system shall display all available products in a grid layout.
-- Products shall be filterable by: category, brand, price range, minimum rating, and stock availability.
-- Products shall be sortable by: newest, best rated, price low-to-high, price high-to-low, name A-Z, name Z-A.
-- The system shall display a count of filtered results.
-- Filters shall be clearable via a single action.
+### 3.3 Filtering (FR-010 to FR-014)
+- **FR-010**: Filter by category
+- **FR-011**: Filter by brand
+- **FR-012**: Filter by price range
+- **FR-013**: Filter by availability (in-stock / out-of-stock)
+- **FR-014**: Clear all filters resets the view
 
-### FR-03 — Search
-- The system shall allow users to search products by name, brand, category, and short description.
-- Search shall be accessible from the header (navigates to catalogue with query applied) and from the catalogue sidebar.
-- Search results shall update in real time as filters are applied in the sidebar.
+### 3.4 Sorting (FR-015 to FR-018)
+- **FR-015**: Sort by price (low to high)
+- **FR-016**: Sort by price (high to low)
+- **FR-017**: Sort by name (A-Z)
+- **FR-018**: Sort by rating (high to low)
 
-### FR-04 — Product Detail Page
-- Each product shall have a dedicated detail page accessible via its URL slug.
-- The page shall display: product name, brand, images/gallery, price, old price (if discounted), discount badge, rating, review count, SKU, stock status, short description, full description, and specifications table.
-- Users shall be able to select a quantity and add the product to the cart.
-- Users shall be able to add or remove the product from their wishlist.
-- Related products from the same category shall be displayed.
+### 3.5 Cart (FR-019 to FR-024)
+- **FR-019**: Add products to cart from catalog or detail page
+- **FR-020**: View cart with item list, quantities, and subtotal
+- **FR-021**: Update item quantity in cart
+- **FR-022**: Remove items from cart
+- **FR-023**: Cart badge shows total item count in header
+- **FR-024**: Cart persists across page refreshes via localStorage
 
-### FR-05 — Shopping Cart
-- Users shall be able to add products to the cart from both the product card and product detail page.
-- The cart shall support quantity increase and decrease per item.
-- Removing an item at quantity 1 shall remove it from the cart.
-- The cart shall display a subtotal, shipping cost, and total.
-- Shipping shall be free for orders above £50; otherwise £5.99 applies.
-- The cart icon in the header shall display the current item count.
+### 3.6 Wishlist (FR-025 to FR-028)
+- **FR-025**: Add/remove products to/from wishlist
+- **FR-026**: View wishlist page with saved items
+- **FR-027**: Wishlist persists across page refreshes
+- **FR-028**: Wishlist count shown in header
 
-### FR-06 — Wishlist
-- Users shall be able to add products to a wishlist.
-- The wishlist shall be accessible via a dedicated page.
-- Users shall be able to remove items from the wishlist.
-- The wishlist icon in the header shall display the current count.
+### 3.7 Authentication (FR-029 to FR-032)
+- **FR-029**: Login page with email and password fields
+- **FR-030**: Register page with name, email, and password fields
+- **FR-031**: Demo credentials: demo@qualicoretech.com / Demo1234
+- **FR-032**: Logout clears session
 
-### FR-07 — Authentication
-- The system shall provide a login page accepting email and password.
-- The system shall provide a registration page accepting first name, last name, email, password, and confirm password.
-- On successful login, the user's name shall be displayed in the header.
-- Users shall be able to log out via a dropdown menu.
-- Authentication state shall persist via localStorage.
+### 3.8 Checkout (FR-033 to FR-037)
+- **FR-033**: Checkout form with customer details, delivery address, and payment fields
+- **FR-034**: Required field validation on submission
+- **FR-035**: Order summary sidebar with item list, subtotal, shipping, and total
+- **FR-036**: Free shipping for orders over £50
+- **FR-037**: Order confirmation page after successful submission
 
-### FR-08 — Checkout
-- The checkout page shall be accessible from the cart.
-- The checkout form shall collect: first name, last name, email, phone, delivery address, city, postcode, card holder name, card number, expiry date, and CVV.
-- Required fields shall be validated on form submission.
-- On successful submission, the user shall be redirected to an order success page.
-- An order reference number shall be generated and displayed.
+### 3.9 Static Pages (FR-038 to FR-040)
+- **FR-038**: About page with brand information
+- **FR-039**: Contact page with contact details
+- **FR-040**: Terms & Conditions page
 
-### FR-09 — Static Pages
-- The system shall include an About page, Contact page, and Terms & Conditions page.
-- Navigation links to these pages shall be available in the footer.
+## 4. Non-Functional Requirements
 
-### FR-10 — Navigation
-- The header shall include: logo (links to home), search bar, wishlist icon, cart icon, and sign-in / account menu.
-- The navigation bar shall include links to: Products, Laptops, Monitors, Accessories, and About.
-- The mobile navigation menu shall collapse and expand correctly on smaller screen sizes.
+| ID | Requirement | Target |
+|----|------------|--------|
+| NFR-001 | Performance | Pages load within 3 seconds on broadband |
+| NFR-002 | Responsiveness | Usable on 320px–1920px viewports |
+| NFR-003 | Browser Support | Chrome, Firefox, Edge (latest) |
+| NFR-004 | Accessibility | Basic keyboard navigation and semantic HTML |
+| NFR-005 | Data Persistence | localStorage for cart, wishlist, auth state |
 
----
+## 5. Assumptions
+- No real payment processing occurs
+- No backend server or database is used
+- Product data is static JSON
+- Authentication is simulated (no server validation)
 
-## 6. Non-Functional Requirements
+## 6. Constraints
+- Frontend-only (React + Vite)
+- No API integrations
+- No real user accounts
+- localStorage has ~5MB limit per origin
 
-### NFR-01 — Performance
-- Pages shall load within 2 seconds under normal conditions.
-- Filtering and sorting shall respond within 500ms.
-
-### NFR-02 — Usability
-- The application shall be usable without prior training.
-- Error messages shall be clear and actionable.
-
-### NFR-03 — Compatibility
-- The application shall function correctly on the latest versions of Chrome, Firefox, Safari, and Edge.
-- The application shall be responsive across desktop (1280px+), tablet (768px–1279px), and mobile (< 768px) viewports.
-
-### NFR-04 — Reliability
-- Cart and wishlist data shall persist across page refreshes via localStorage.
-- Authentication state shall persist until explicitly logged out.
-
-### NFR-05 — Security (Demo Scope)
-- No real payment data is processed.
-- Credentials are demo-only and hardcoded.
-
----
-
-## 7. Assumptions
-
-- Users have a modern web browser with JavaScript enabled.
-- No backend or real database is in use; all data is local and static.
-- Product data is seeded from a local JSON file and does not change.
-- The application is deployed as a static SPA (e.g., on Vercel).
-- The demo credentials (demo@qualicoretech.com / Demo1234) are known to the user.
-
----
-
-## 8. Constraints
-
-- No server-side logic; all processing is client-side.
-- No real payment gateway integration.
-- Authentication is simulated; any registration "creates" a session without persistence beyond the browser.
-- Product stock levels are static and do not decrement on purchase.
-
----
-
-## 9. Exclusions
-
-- Order history
-- Account settings / profile editing
-- Address book
-- Discount codes / vouchers
-- Delivery tracking
-- Stock management
-- Multi-currency support
-
----
-
-## 10. Feature List Summary
-
-| Feature | Included |
-|---------|----------|
-| Home Page | ✅ |
-| Product Catalogue | ✅ |
-| Category Filtering | ✅ |
-| Brand Filtering | ✅ |
-| Price Range Filter | ✅ |
-| Rating Filter | ✅ |
-| In-Stock Filter | ✅ |
-| Sorting (6 options) | ✅ |
-| Search (header + sidebar) | ✅ |
-| Product Detail Page | ✅ |
-| Gallery / Image Viewer | ✅ |
-| Specs Table | ✅ |
-| Related Products | ✅ |
-| Shopping Cart | ✅ |
-| Quantity Management | ✅ |
-| Shipping Calculation | ✅ |
-| Wishlist | ✅ |
-| Login | ✅ |
-| Registration | ✅ |
-| Checkout Form | ✅ |
-| Order Success Page | ✅ |
-| Responsive Design | ✅ |
-| About / Contact / Terms | ✅ |
-| 404 Not Found Page | ✅ |
+## 7. Exclusions
+- Order history beyond current session
+- Real email notifications
+- Admin panel
+- Inventory management
+- Multi-language support
+- Payment gateway integration

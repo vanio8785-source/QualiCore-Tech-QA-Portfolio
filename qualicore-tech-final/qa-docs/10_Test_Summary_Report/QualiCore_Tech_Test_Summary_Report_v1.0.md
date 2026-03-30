@@ -1,158 +1,93 @@
-# Test Summary Report
-## QualiCore Tech — Manual QA Portfolio E-Commerce Application
-**Document Version:** 1.0  
-**Report Date:** March 2026  
-**Testing Period:** March 2026  
-**Prepared By:** QA Portfolio  
-**Application Version:** v1.0  
-**Status:** Final
+# QualiCore Tech — Test Summary Report v1.0
 
----
-
-## 1. Executive Summary
-
-Manual QA testing of the QualiCore Tech e-commerce application has been completed. A total of 35 test cases were executed covering all major functional areas of the application. 15 defects were identified and documented. The majority of critical user flows — browsing, cart management, authentication, and checkout — operate correctly. Identified defects range in severity from High (affecting financial accuracy and data consistency) to Low (cosmetic and minor UX issues).
-
-The application is fit for use as a QA training and portfolio demonstration environment. It is not recommended for public production use in its current state due to the known intentional and incidentally-discovered defects.
-
----
+## 1. Document Information
+| Field | Value |
+|-------|-------|
+| Project | QualiCore Tech |
+| Version | 1.0 |
+| Test Period | 2026-03-25 to 2026-03-28 |
+| Prepared By | QA Tester |
+| Date | 2026-03-28 |
 
 ## 2. Scope Summary
-
-Testing was conducted against the following functional areas:
-
-| Area | In Scope |
-|------|----------|
-| Home Page | ✅ |
-| Product Catalogue | ✅ |
-| Search | ✅ |
-| Filtering (Category, Brand, Price, Rating, Stock) | ✅ |
-| Sorting | ✅ |
-| Product Detail Pages | ✅ |
-| Shopping Cart | ✅ |
-| Wishlist | ✅ |
-| Authentication (Login / Register / Logout) | ✅ |
-| Checkout and Order Confirmation | ✅ |
-| Navigation and Responsive Behaviour | ✅ |
-| Static Pages (About, Contact, Terms) | Partially (smoke tested) |
-
----
+Testing covered all core functional areas of the QualiCore Tech e-commerce demo application:
+- Product catalog browsing and display
+- Product detail pages and specifications
+- Search functionality (name, brand, category)
+- Filter functionality (category, brand, price, availability)
+- Sort functionality (price, name, rating)
+- Shopping cart management
+- Wishlist management
+- User authentication (login, register, logout)
+- Checkout flow and form validation
+- Order confirmation
+- Responsive design (mobile, tablet, desktop)
+- Navigation and static pages
 
 ## 3. Test Execution Summary
 
-| Metric | Value |
+| Metric | Count |
 |--------|-------|
-| Total Test Cases Planned | 35 |
-| Total Test Cases Executed | 35 |
-| Test Cases Passed | 22 |
-| Test Cases Failed | 13 |
-| Pass Rate | 62.9% |
-| Total Defects Logged | 15 |
-| Defects: Critical | 0 |
-| Defects: High | 2 |
-| Defects: Medium | 9 |
-| Defects: Low | 4 |
-| Exploratory Defects Found | 2 (BUG-012, BUG-015) |
+| Total Test Cases | 22 |
+| Passed | 12 |
+| Failed | 10 |
+| Blocked | 0 |
+| Not Executed | 0 |
+| **Pass Rate** | **54.5%** |
 
----
+## 4. Defect Summary
 
-## 4. Pass / Fail Results by Area
+| Severity | Count | Examples |
+|----------|-------|----------|
+| High | 3 | Cart subtotal error, card validation, weak password |
+| Medium | 8 | Brand mismatch, sort reversal, badge lag, wishlist truncation |
+| Low | 6 | Search trim, duplicates, false badges, URL params, CTA link |
+| **Total** | **17** | |
 
-| Area | Tests Executed | Passed | Failed | Pass Rate |
-|------|---------------|--------|--------|-----------|
-| Home Page | 1 | 1 | 0 | 100% |
-| Product Catalogue | 2 | 2 | 0 | 100% |
-| Search | 2 | 1 | 1 | 50% |
-| Filtering | 6 | 6 | 0 | 100% |
-| Sorting | 2 | 1 | 1 | 50% |
-| Product Detail | 3 | 1 | 2 | 33% |
-| Cart | 7 | 5 | 2 | 71% |
-| Wishlist | 3 | 2 | 1 | 67% |
-| Authentication | 3 | 1 | 2 | 33% |
-| Checkout | 3 | 1 | 2 | 33% |
-| Navigation / Responsive | 3 | 2 | 1 | 67% |
-| **Total** | **35** | **22** | **13** | **62.9%** |
+### Defect Distribution by Module
+| Module | Defects |
+|--------|---------|
+| Product Data | 4 |
+| Search | 2 |
+| Filters/Sorting | 2 |
+| Cart | 2 |
+| Wishlist | 2 |
+| Checkout/Validation | 3 |
+| UI/UX | 2 |
 
----
-
-## 5. Defect Summary
-
-| Bug ID | Title | Area | Severity | Priority | Status |
-|--------|-------|------|----------|---------|--------|
-| BUG-001 | Cart subtotal wrong for product ID 7 at qty > 1 | Cart | High | High | Open |
-| BUG-002 | Incorrect RAM spec on product ID 2 PDP | Product Detail | Medium | High | Open |
-| BUG-003 | Broken primary image on product ID 3 PDP | Product Detail | Medium | Medium | Open |
-| BUG-004 | Corsair sidebar search returns fewer results than brand filter | Search | Medium | High | Open |
-| BUG-005 | Price Low to High sorts Components descending | Sorting | High | High | Open |
-| BUG-006 | Typo in MacBook Air H1 page title | Product Detail | Low | Low | Open |
-| BUG-007 | Cart quantity has no stock cap | Cart | Medium | High | Open |
-| BUG-008 | Postcode not validated on checkout | Checkout | Medium | Medium | Open |
-| BUG-009 | Wishlist silently truncated to 8 items on refresh | Wishlist | Low | Medium | Open |
-| BUG-010 | Login does not validate password as required | Authentication | Medium | High | Open |
-| BUG-011 | Registration accepts passwords below stated minimum length | Authentication | Medium | Medium | Open |
-| BUG-012 | Cart badge can briefly desync after item removal | Cart | Low | Medium | Open |
-| BUG-013 | Checkout accepts 4-digit card numbers | Checkout | Medium | Medium | Open |
-| BUG-014 | Mobile menu does not close on tap outside | Navigation | Low | Low | Open |
-| BUG-015 | Product count shows stale loading state on back navigation | Catalogue | Low | Low | Open |
-
----
-
-## 6. Defect Severity Distribution
-
-| Severity | Count | Percentage |
-|----------|-------|------------|
-| Critical | 0 | 0% |
-| High | 2 | 13% |
-| Medium | 9 | 60% |
-| Low | 4 | 27% |
-| **Total** | **15** | **100%** |
-
----
-
-## 7. Quality Assessment
+## 5. Quality Assessment
 
 ### Strengths
-- All core user flows (browsing, search, filtering, add to cart, checkout) are functional end-to-end.
-- Responsive design works well on both desktop and mobile viewports.
-- Filtering and sorting operate correctly across most combinations.
-- localStorage persistence for cart, wishlist, and auth state is reliable.
-- Form validation provides clear error messages for most required fields.
-- Error handling is present in edge cases (empty cart, invalid routes, broken images).
+- Core navigation and page routing work correctly
+- Product catalog displays all items with proper images and information
+- Cart add/remove/update flows work for most products
+- Checkout flow completes successfully with valid data
+- Authentication flow works with demo credentials
+- Responsive design handles most viewport sizes well
 
 ### Weaknesses
-- Financial accuracy defect (BUG-001) affects cart subtotal for a specific product — high risk in production.
-- Data consistency issues (BUG-002, BUG-006) reduce product information trustworthiness.
-- Validation gaps in authentication and checkout (BUG-008, BUG-010, BUG-011, BUG-013) represent incomplete form hardening.
-- Sorting logic defect (BUG-005) affects a full product category, impacting discoverability.
-- Wishlist persistence edge case (BUG-009) silently loses user data without feedback.
+- Data consistency issues across product catalog
+- Validation gaps in checkout and registration forms
+- State management edge cases in cart and wishlist
+- Search has minor but reproducible issues
 
----
+## 6. Risk Assessment
+| Risk | Level | Impact |
+|------|-------|--------|
+| Cart pricing errors | Medium | Could mislead users on order totals |
+| Weak form validation | Medium | Poor data quality, security concerns |
+| Data inconsistencies | Low | Cosmetic/trust issues |
+| Search edge cases | Low | Minor usability impact |
 
-## 8. Release Recommendation
+## 7. Release Recommendation
 
-**Recommendation: NOT RECOMMENDED for production release without defect resolution.**
+**Conditional Release** — The application is functional for demo and QA practice purposes. The identified defects do not prevent core user flows but should be addressed before any production deployment.
 
-The following defects should be resolved before any production deployment consideration:
+For the intended purpose (Manual QA training and portfolio practice), the current defect set is **by design** and provides excellent material for:
+- Bug report writing practice
+- Severity/priority assessment exercises
+- Exploratory testing sessions
+- Regression testing scenarios
 
-**Must Fix (blocking):**
-- BUG-001 — Cart subtotal calculation error (financial data integrity)
-- BUG-005 — Sorting defect for Components category
-
-**Should Fix (high priority):**
-- BUG-004 — Corsair search returning incomplete results
-- BUG-007 — Cart quantity exceeding stock
-- BUG-010 — Login password field not validated as required
-
-**Nice to Fix (improvement):**
-- BUG-002, BUG-003, BUG-006 — Product data and presentation issues
-- BUG-008, BUG-011, BUG-013 — Checkout and registration validation gaps
-- BUG-009 — Wishlist truncation on refresh
-- BUG-012, BUG-014, BUG-015 — Minor UX polish items
-
----
-
-## 9. Conclusion
-
-The QualiCore Tech application successfully demonstrates a functional, visually professional e-commerce environment suitable for manual QA training and portfolio purposes. The intentional defect set provides realistic, varied, and reportable bugs across a range of functional areas — covering data consistency, financial calculation, form validation, sorting logic, and UI/UX behaviour.
-
-This test cycle produced 15 documented defects with full reproduction steps, severity/priority ratings, and professional write-ups. The test artefacts (test plan, scenarios, cases, execution log, and this report) form a complete QA documentation portfolio that demonstrates practical manual testing skills to potential employers.
+## 8. Conclusion
+QualiCore Tech successfully serves its purpose as a QA training application. The intentional defect set is well-distributed across functional areas and provides realistic, reportable issues suitable for portfolio development. The application remains stable, navigable, and demo-ready despite the embedded defects.

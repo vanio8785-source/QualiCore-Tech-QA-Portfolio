@@ -1,36 +1,23 @@
-Test Case ID,Title,Tester,Date Executed,Environment,Result,Defects Found,Notes
-TC-001,Home page loads correctly,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Hero and featured products displayed correctly; CTA links to /products
-TC-002,Product catalogue loads all products,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,All products loaded; count displayed correctly
-TC-003,Product card displays correct info,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Name/image/price/rating all present on cards; Add to Cart visible
-TC-004,PDP shows all required fields,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-003 / BUG-006,Product ID 3 primary image broken (BUG-003); Product ID 6 title typo (BUG-006); all other fields correct
-TC-005,Out-of-stock product cannot be added to cart,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,OOS products correctly disabled on card and PDP
-TC-006,Product specs consistency check,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-002,Product ID 2 RAM shown as '4GB DDR4'; contradicts description
-TC-007,Header search returns correct results,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Search navigates correctly; results match search terms; empty state shown for no results
-TC-008,Sidebar search filters inline,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-004,Corsair search returns 3 fewer results than brand filter
-TC-009,Category filter works correctly,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Category filter narrows results correctly; All restores full list
-TC-010,Brand filter works correctly,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Brand filter returns correct results for all brands tested
-TC-011,Price range filter,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Slider correctly removes products above max price
-TC-012,Rating filter,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Rating filter behaves correctly for all rating thresholds
-TC-013,In-Stock filter,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,OOS products correctly removed when filter enabled
-TC-014,Clear filters,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Clear button resets all filters; full product list restored; button disappears
-TC-015,Sort Price Low to High,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-005,All categories sort correctly except Components; Components sort descending when Low to High selected
-TC-016,Sort Best Rated,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Best Rated orders products highest to lowest correctly
-TC-017,Add to Cart from listing,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Cart badge increments; toast shown; item appears in cart
-TC-018,Add to Cart from PDP with quantity,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Selected quantity of 3 added correctly; line subtotal accurate
-TC-019,Cart page totals calculation,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-001,Product ID 7 with qty 2: subtotal shows price of 1 unit; all other products calculate correctly
-TC-020,Cart quantity controls,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-007,Quantity increases indefinitely beyond stock level on cart page; PDP correctly limits quantity
-TC-021,Remove item from cart,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Item removed correctly; totals recalculate; toast shown
-TC-022,Free shipping threshold,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Shipping shows £5.99 below £50; FREE at £50 and above
-TC-023,Cart persistence after refresh,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Cart items and quantities preserved in localStorage across refresh
-TC-024,Add to wishlist,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Product added to wishlist; button fills; badge increments; item on /wishlist
-TC-025,Remove from wishlist,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Item removed from wishlist; badge decrements; PDP button reverts to unfilled
-TC-026,Wishlist persistence limit,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-009,9th wishlist item visible in session; disappears silently after page refresh
-TC-027,Login validation and success,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-010,Empty email correctly flagged; empty password proceeds with no field error; credentials error shown instead
-TC-028,Registration validation,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-011,Required field and mismatch validation works; 3-character password accepted without error
-TC-029,Logout,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Logout clears session; Sign In button returns; state not restored on refresh
-TC-030,Checkout page layout and summary,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Order summary matches cart; all three form sections present
-TC-031,Checkout form validation,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-008 / BUG-013,Postcode has no validation error; 4-digit card number accepted; all other field validations work
-TC-032,Successful checkout,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Order submits; redirects to /order-success; order ref displayed; cart cleared
-TC-033,Mobile navigation menu,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Fail,BUG-014,Menu opens and closes via ✕ and navigation; does not close on tap outside content
-TC-034,Header navigation links,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,All nav links lead to correct destinations
-TC-035,PDP breadcrumb navigation,QA Tester,2026-03-28,Chrome 124 / localhost:5173 / Win10,Pass,,Breadcrumbs accurate and all segments link correctly
+Test Case ID,Title,Status,Execution Date,Tester,Actual Result,Defects Found,Notes
+TC-001,Catalog displays all products,Pass,2026-03-28,QA Tester,All products displayed,—,—
+TC-002,Product detail shows specs,Fail,2026-03-28,QA Tester,RAM mismatch on ID 2,BUG-015,Specs vs description inconsistency
+TC-003,Sale badges on discounts,Fail,2026-03-28,QA Tester,False badges on low-stock items,BUG-013,Badge logic checks stock not discount
+TC-004,Search by product name,Pass,2026-03-28,QA Tester,Results returned correctly,—,—
+TC-005,Search with leading spaces,Fail,2026-03-28,QA Tester,No results returned,BUG-005,Input not trimmed
+TC-006,Search across brand/category,Fail,2026-03-28,QA Tester,Some brands excluded for ID>35,BUG-006,Brand search filter issue
+TC-007,Category filter,Pass,2026-03-28,QA Tester,Filter works correctly,—,—
+TC-008,Price range filter,Pass,2026-03-28,QA Tester,Products within range shown,—,—
+TC-009,Clear Filters resets,Fail,2026-03-28,QA Tester,URL params not cleared,BUG-008,Visual reset works but URL stale
+TC-010,Sort by price ascending,Fail,2026-03-28,QA Tester,Reversed for Components,BUG-007,Only affects Components category
+TC-011,Add to cart from catalog,Pass,2026-03-28,QA Tester,Product added successfully,—,—
+TC-012,Cart quantity recalculates,Fail,2026-03-28,QA Tester,Subtotal wrong for ID 7,BUG-003,Off-by-one in calculation
+TC-013,Remove from cart,Pass,2026-03-28,QA Tester,Item removed correctly,—,—
+TC-014,Cart persistence on refresh,Pass,2026-03-28,QA Tester,Cart persists,—,—
+TC-015,Add to wishlist,Pass,2026-03-28,QA Tester,Product added to wishlist,—,—
+TC-016,Wishlist persistence,Fail,2026-03-28,QA Tester,Truncated to 8 items,BUG-011,Items beyond 8 lost on refresh
+TC-017,Login with demo credentials,Pass,2026-03-28,QA Tester,Login successful,—,—
+TC-018,Checkout validation empty,Fail,2026-03-28,QA Tester,Postcode not validated,BUG-009,Postcode field skipped
+TC-019,Free shipping threshold,Pass,2026-03-28,QA Tester,Free shipping applied at £50+,—,—
+TC-020,Product data consistency,Fail,2026-03-28,QA Tester,Brand mismatch on ID 15,BUG-001,Card vs detail page inconsistency
+TC-021,Cart badge updates,Fail,2026-03-28,QA Tester,Badge lag on remove,BUG-004,Updates only on next action
+TC-022,Mobile responsive layout,Pass,2026-03-28,QA Tester,Layout adapts correctly,—,Minor overlap on checkout buttons

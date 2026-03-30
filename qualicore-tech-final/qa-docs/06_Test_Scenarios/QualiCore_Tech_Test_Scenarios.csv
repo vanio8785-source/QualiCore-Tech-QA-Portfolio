@@ -1,38 +1,31 @@
-Scenario ID,Area,Title,Description,Priority
-TS-001,Home Page,Home page loads and displays key content,Hero section and featured products load with working links,Medium
-TS-002,Catalogue,All products display on catalogue page,All products show in grid with correct count,High
-TS-003,Catalogue,Product card displays core information,Each card shows name/image/price/rating/Add to Cart button,High
-TS-004,Product Detail,PDP displays all product data,All product fields visible on detail page,High
-TS-005,Product Detail,Specs table is accurate and consistent,Specs match expected data and listing information,High
-TS-006,Search,Header search navigates with results,Submitting search navigates to /products with filtered results,High
-TS-007,Search,Sidebar search filters products inline,Typing in sidebar search filters results and updates count,High
-TS-008,Filtering,Category filter narrows results,Selecting category shows only matching products,High
-TS-009,Filtering,Brand filter narrows results,Selecting brand filters to that brand only,Medium
-TS-010,Filtering,Price range slider filters by max price,Slider removes products above max from results,High
-TS-011,Filtering,Rating filter removes below-minimum products,Minimum rating hides lower-rated products,Medium
-TS-012,Filtering,In-Stock filter hides out-of-stock products,Out-of-stock products hidden when filter enabled,Medium
-TS-013,Filtering,Clear filters resets all filters,Clear button resets all filters and restores full list,Medium
-TS-014,Sorting,Price Low to High sorts correctly,All products sorted ascending by price across all categories,High
-TS-015,Sorting,Best Rated sort orders by descending rating,Highest rated products appear first,Medium
-TS-016,Cart,Add to Cart from listing,Cart badge increments and item added after clicking Add to Cart on card,High
-TS-017,Cart,Add to Cart from PDP with custom quantity,Correct quantity added to cart from PDP,High
-TS-018,Cart,Cart page shows correct items and totals,Items/subtotal/shipping/total all correct on cart page,High
-TS-019,Cart,Quantity controls update totals,Changing quantity updates line subtotal and cart total,High
-TS-020,Cart,Remove item updates cart,Removing item deletes it and recalculates totals,High
-TS-021,Cart,Free shipping at £50 threshold,Shipping shows FREE when subtotal >= £50,Medium
-TS-022,Cart,Cart persists after refresh,Cart contents preserved in localStorage across page refresh,High
-TS-023,Wishlist,Adding to wishlist,Product added to wishlist; button state changes; badge increments,Medium
-TS-024,Wishlist,Removing from wishlist,Product removed; badge decrements,Medium
-TS-025,Wishlist,Wishlist page reflects contents,/wishlist shows all added items with remove functionality,Medium
-TS-026,Authentication,Login with valid and invalid credentials,Correct creds log in; incorrect creds show error,High
-TS-027,Authentication,Registration validation and success,Required fields validated; password match checked; valid form registers,High
-TS-028,Authentication,Authenticated state and logout,Name shown in header; logout ends session,High
-TS-029,Checkout,Checkout page displays summary and form,Order summary and all form fields present,High
-TS-030,Checkout,Checkout form validation,Empty required fields show errors; form not submitted,High
-TS-031,Checkout,Successful checkout flow,Valid form submits; redirects to order success; cart cleared,High
-TS-032,Navigation,Mobile navigation menu,Hamburger opens/closes menu on narrow viewport,High
-TS-033,Navigation,Header navigation links,Each nav link leads to correct page,High
-TS-034,Navigation,Breadcrumb on PDP,Breadcrumbs accurate and each segment links correctly,Low
-TS-035,Data Consistency,Price consistent between listing and PDP,Product price same on card and detail page,High
-TS-036,Data Consistency,Out-of-stock cannot be added to cart,Add to Cart disabled for out-of-stock products,High
-TS-037,Data Consistency,Discount badge calculation correct,Displayed % discount matches actual price difference,Medium
+Scenario ID,Module,Test Scenario,Priority
+TS-001,Catalog,Verify all products display on the catalog page,High
+TS-002,Product Details,Verify product detail page shows complete information,High
+TS-003,Catalog,Verify sale/discount badges display correctly,Medium
+TS-004,Search,Verify search returns results for valid product names,High
+TS-005,Search,Verify search works across name/brand/category,High
+TS-006,Search,Verify search with no results shows empty state,Medium
+TS-007,Filters,Verify category filter narrows product list,High
+TS-008,Filters,Verify brand filter narrows product list,Medium
+TS-009,Filters,Verify Clear Filters resets all filters,High
+TS-010,Sorting,Verify sort by price ascending orders correctly,High
+TS-011,Sorting,Verify sort by price descending orders correctly,High
+TS-012,Cart,Verify adding a product to cart,High
+TS-013,Cart,Verify updating quantity recalculates totals,High
+TS-014,Cart,Verify removing a product from cart,High
+TS-015,Cart,Verify cart persists after page refresh,High
+TS-016,Wishlist,Verify adding a product to wishlist,Medium
+TS-017,Wishlist,Verify removing a product from wishlist,Medium
+TS-018,Wishlist,Verify wishlist persists after refresh,Medium
+TS-019,Auth,Verify login with valid demo credentials,High
+TS-020,Auth,Verify login with invalid credentials shows error,High
+TS-021,Checkout,Verify checkout form validation for required fields,High
+TS-022,Checkout,Verify free shipping for orders over £50,Medium
+TS-023,Catalog,Verify product data consistency,Medium
+TS-024,UI,Verify responsive layout on mobile viewport,High
+TS-025,Navigation,Verify all header navigation links work,High
+TS-026,Cart,Verify cart badge count updates correctly,Medium
+TS-027,Checkout,Verify order success page displays after checkout,High
+TS-028,Wishlist,Verify duplicate wishlist behavior,Medium
+TS-029,Search,Verify search with leading/trailing spaces,Medium
+TS-030,Sorting,Verify sort behavior within specific categories,Medium
