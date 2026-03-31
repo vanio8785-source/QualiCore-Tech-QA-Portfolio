@@ -1,0 +1,147 @@
+.static-page { padding-bottom: 80px; }
+
+.static-content { max-width: 1100px; }
+
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 48px;
+  margin-bottom: 48px;
+  align-items: start;
+}
+
+.about-text h2 {
+  font-size: 22px;
+  margin-bottom: 14px;
+  margin-top: 28px;
+}
+
+.about-text h2:first-child { margin-top: 0; }
+
+.about-text p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.about-stats-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.about-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about-stat-val {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.about-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.about-cta {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  text-align: center;
+}
+
+.about-cta h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.contact-info h2,
+.contact-form-wrap h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.contact-icon { font-size: 22px; flex-shrink: 0; }
+
+.contact-item-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.contact-item-val {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Terms */
+.terms-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.terms-section {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.terms-section:last-child { border-bottom: none; }
+
+.terms-section h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.terms-section p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
